@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+<Resource name="jdbc_maria" auth="Container" type="javax.sql.DataSource" 
+      driverClassName="org.mariadb.jdbc.Driver"
+      loginTimeout="10" maxWait="5000"  username="root"  password="kic1234"  testOnBorrow="true"
+   url="jdbc:mysql://localhost:3306/test" />
+</Context>
