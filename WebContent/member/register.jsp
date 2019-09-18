@@ -91,8 +91,7 @@ window.onload = function(){
 
 				<tr>
 					<td colspan="2" align="center">
-						<input type="button"
-						value="회원가입" id="btnSubmit">
+						<input type="button" value="회원가입" id="btnSubmit">
 						&nbsp;&nbsp;&nbsp;&nbsp; 
 						<input type="reset" value="다시쓰기">
 					</td>
