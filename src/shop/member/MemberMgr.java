@@ -201,8 +201,8 @@ public class MemberMgr { // DAO
 			pstmt.setString(++index, bean.getAddress());
 			pstmt.setString(++index, bean.getJob());
 			pstmt.setString(++index, id);
-			if(pstmt.executeUpdate() > 0) {
-				b=true;
+			if (pstmt.executeUpdate() > 0) {
+				b = true;
 			}
 		} catch (Exception e) {
 			System.out.println("memberUpdate err : " + e);
@@ -219,5 +219,67 @@ public class MemberMgr { // DAO
 			}
 		}
 		return b;
+	}
+
+	public boolean addminLoginCheck(String adminId, String adminPasswd) {
+		boolean b = false;
+		try {
+			int index = 0;
+			conn = ds.getConnection();
+			String sql = "select * from admin where admin_id=? and admin_passwd=? ";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(++index, adminId);
+			pstmt.setString(++index, adminPasswd);
+			rs = pstmt.executeQuery();
+			b = rs.next();
+		} catch (Exception e) {
+			System.out.println("addminLoginCheck err : " + e);
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return b;
+	}
+	
+	public ArrayList<MemberDto> getMemberAll(){
+		ArrayList<MemberDto> list = new ArrayList<MemberDto>();
+			try {
+				conn = ds.getConnection();
+				String sql = "select * from member";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					int index = 0;
+					MemberDto dto = new MemberDto();
+					dto.setId(rs.getString(++index));
+					dto.setPasswd(rs.getString(++index));
+					dto.setName(rs.getString(++index));
+					dto.setEmail(rs.getString(++index));
+					dto.setPhone(rs.getString(++index));
+					list.add(dto);
+				}
+			} catch (Exception e) {
+				System.out.println("getMemberAll err : " + e);
+			} finally {
+				try {
+					if (rs != null)
+						rs.close();
+					if (pstmt != null)
+						pstmt.close();
+					if (conn != null)
+						conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		return list;
 	}
 }

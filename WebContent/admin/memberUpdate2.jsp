@@ -4,12 +4,8 @@
 <jsp:useBean id="memberMgr" class="shop.member.MemberMgr"/>
 <%
 	request.setCharacterEncoding("utf-8");
-	String id = (String)session.getAttribute("idKey");
+	String id = request.getParameter("id");
 	MemberDto dto = memberMgr.getMember(id);
-	
-	if(dto == null){
-		response.sendRedirect("../guest/guest_index");
-	}
 %>
 
 
@@ -23,15 +19,14 @@
 </script>
 <script type="text/javascript">
 	window.onload = function(){
-		document.getElementById("btnUpdate").onclick = memberUpdate;
-		document.getElementById("btnUpdateCancel").onclick = memberUpdateCancel;
-		document.getElementById("btnDelete").onclick = memberDelete;
+		document.getElementById("btnUpdateAdmin").onclick = memberUpdateAdmin;
+		document.getElementById("btnUpdateCancelAdmin").onclick = memberUpdateCancelAdmin;
 	}
 </script>
 </head>
 <body>
 <br><br>
-<form action="memberupdateproc.jsp" name = "updateForm" method="post">
+<form action="memberupdateproc2.jsp" name = "updateFormAdmin" method="post">
 	<table border="1" style="width: 90%">
 		<tr style="background-color:cyan;">
 			<td colspan="2" style="text-align: center;">
@@ -42,6 +37,7 @@
 		<tr>
 			<td>아이디</td>
 			<td><%=dto.getId()%></td>
+			<input type="hidden" name="id" value="<%=dto.getId()%>">
 		</tr>
 		
 		<tr>
@@ -84,9 +80,8 @@
 		
 		<tr>
 			<td colspan="2" style="text-align: center;">
-			<input type="button" value="수정완료" id="btnUpdate">
-			<input type="button" value="수정취소" id="btnUpdateCancel">
-			<input type="button" value="회원탈퇴" id="btnDelete">
+			<input type="button" value="수정완료" id="btnUpdateAdmin">
+			<input type="button" value="수정취소" id="btnUpdateCancelAdmin">
 			</td>
 		</tr>
 	</table>

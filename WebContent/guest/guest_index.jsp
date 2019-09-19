@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>쇼핑몰</title>
-<link href="/css/style.css" rel="stylesheet" type="text/css">
+<link href="../css/style.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="../js/script.js"></script>
 </head>
 <body style = "top: 20px">

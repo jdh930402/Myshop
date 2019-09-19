@@ -75,3 +75,18 @@ function memberUpdateCancel(){
 function memberDelete(){
 	alert('회원탈퇴');
 }
+
+
+// 관리자가 개인정보 수정
+function memUpdate(id){
+	document.updateForm.id.value = id;
+	document.updateForm.submit();
+}
+
+function memberUpdateAdmin(){
+	document.updateFormAdmin.submit();
+}
+
+function memberUpdateCancelAdmin(){
+	location.href ="membermanager.jsp";
+}
