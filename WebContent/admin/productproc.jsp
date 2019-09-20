@@ -10,11 +10,9 @@
 		result = productMgr.insertProduct(request); // request는 service메서드를 오버라이딩 한것이기 때문에 servlet에서 컴파일하면서 이전 form에서 전송한 데이터를 무조건 컴파일하게 된다.
 		
 	}else if(flag.equals("update")){
-		
-		
+		result = productMgr.updateProduct(request);
 	}else if(flag.equals("delete")){
-		
-		
+		result = productMgr.deleteProduct(request.getParameter("no"));
 	}else{
 		response.sendRedirect("productmanager.jsp");
 	}

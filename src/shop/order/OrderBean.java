@@ -1,14 +1,13 @@
 package shop.order;
 
 public class OrderBean {
-	private int no;
-	private String product_no, quantity, sdate, state, id;
+	private String no, product_no, quantity, sdate, state, id;
 
-	public int getNo() {
+	public String getNo() {
 		return no;
 	}
 
-	public void setNo(int no) {
+	public void setNo(String no) {
 		this.no = no;
 	}
 

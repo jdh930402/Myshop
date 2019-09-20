@@ -90,3 +90,36 @@ function memberUpdateAdmin(){
 function memberUpdateCancelAdmin(){
 	location.href ="membermanager.jsp";
 }
+
+
+// 관리자가 상품 상세보기
+function productDetail(no){
+	document.detailForm.no.value = no;
+	document.detailForm.submit();
+}
+
+function productUpdate(no){
+	document.updateForm.no.value = no;
+	document.updateForm.submit();
+}
+
+function productDelete(no){
+	if(confirm('정말 삭제할까요?')){
+	document.deleteForm.no.value = no;
+	document.deleteForm.submit();
+	}
+}
+
+// cart 처리를 위한 함수
+function cartUpdate(form){
+	form.flag.value = "update";
+	form.submit();
+	
+}
+
+function cartDelete(form){
+	form.flag.value = "delete";
+	form.submit();
+}
+
+

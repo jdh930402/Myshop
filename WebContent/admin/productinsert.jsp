@@ -23,12 +23,12 @@
 	</tr>	
 
 	<tr>
-		<td>가격 : </td>
+		<td>가 격 : </td>
 		<td><input type="text" name="price"></td>
 	</tr>	
 
 	<tr>
-		<td>설명 : </td>
+		<td>설 명 : </td>
 		<td><textarea rows="5" cols="60" name="detail"></textarea></td>
 	</tr>	
 
