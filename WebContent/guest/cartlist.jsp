@@ -16,8 +16,8 @@
 <script type="text/javascript" src="../js/script.js"></script>
 </head>
 <body>
-** 장바구니 목록 보기 **<p/>
 <%@ include file="guest_top.jsp"%>
+** 장바구니 목록 보기 **<p/>
 <table style="width: 90%">
 	<tr style="background-color: pink">
 		<th>주문상품</th>

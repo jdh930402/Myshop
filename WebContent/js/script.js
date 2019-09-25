@@ -123,3 +123,19 @@ function cartDelete(form){
 }
 
 
+// 관리자가 주문처리를 하는 곳
+function orderDetail(no){
+	document.detailForm.no.value = no;
+	document.detailForm.submit();
+}
+
+function orderUpdate(form){
+	document.detailForm.flag.value = "update";
+	form.submit(); // form을 넘겼기 때문에 form.submit()이 가능
+}
+
+function orderDelete(form){
+	document.detailForm.flag.value = "delete";
+	document.detailForm.submit();
+}
+
